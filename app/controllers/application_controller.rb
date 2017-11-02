@@ -5,6 +5,17 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    enable :sessions
+    set :session_secret, "fwitter_secret"
+  end
+
+  get '/' do
+    erb :index
+  end
+
+  get '/users/:slug' do
+    @user = User.find_by(username: params[:slug])
+    erb :"users/show"
   end
 
 end
