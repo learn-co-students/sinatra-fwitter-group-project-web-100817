@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Here is your Fwitter Feed!</h1>
+    <div>
+    <% @tweets.each do |tweet| %>
+      <p><%= tweet.content %><p>
+    <%end%>
+  </div>
+  </body>
+</html>
