@@ -1,0 +1,16 @@
+<h1><%= @tweet.user.username %></h1>
+<h3><%= @tweet.content %></h3>
+
+<% if @tweet.user == current_user %>
+   <form action="/tweets" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="tweet[id]" value="<%= @tweet.id %>">
+    <input type="<%= 'submit' %>" name="delete" value="Delete Tweet">
+  </form>
+  <form action="/tweets/<%= @tweet.id %>/edit" method="get">
+    <!-- <input type="hidden" name="_method" value="patch"> -->
+    <input type="<%= 'submit' %>" name="edit" value="Edit Tweet">
+  </form>
+  <% else %>
+    <button type="<%= 'button' %>" name="delete" id="Delete Tweet"></button>
+<% end %>
