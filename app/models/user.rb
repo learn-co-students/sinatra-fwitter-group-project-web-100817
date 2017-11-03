@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :tweets
+  # has_secure_password validations: false
   def slug
     self.username.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   end
