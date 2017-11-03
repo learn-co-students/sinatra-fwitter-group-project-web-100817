@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.9.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <nav class="pa3 pa4-ns">
+      <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Home">FWITTER</a>
+      <a class="link dim gray    f6 f5-ns dib mr3" href="/tweets" title="Tweets">Tweets</a>
+      <% if !logged_in? %>
+      <a class="link dim gray    f6 f5-ns dib mr3 fr" href="/login" title="Login">Log In</a>
+      <a class="link dim gray    f6 f5-ns dib mr3 fr" href="/signup" title="Signup">Sign Up</a>
+      <% else %>
+      <a class="link dim gray    f6 f5-ns dib mr3" href="/tweets/new" title="Create">Create A Tweet</a>
+      <a class="link dim gray    f6 f5-ns dib mr3 fr" href="/logout" title="Logout">Logout</a>
+      <a class="link dim gray    f6 f5-ns dib mr3 fr" href="/mytweets" title="MyTweets">My Tweets</a>
+      <% end %>
+    </nav>
+
+    <%= yield %>
+
+  </body>
+</html>

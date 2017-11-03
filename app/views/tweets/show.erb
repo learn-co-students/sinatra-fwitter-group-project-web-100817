@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Showing A Tweet</title>
+  </head>
+  <body>
+
+    <div class="mw9 center ph3-ns">
+      <div class="cf ph2-ns">
+        <div class="fl w-100 pa2">
+          <h1>All Tweets</h1>
+        </div>
+
+    <div class="w-80 pa1 center">
+      <div class="bg-white pv1">
+        <p class="f6 teal"><%= @tweet.user.username %> said: </p>
+        <p class="f5"><%= @tweet.content %></p>
+
+        <form action="/tweets/<%= @tweet.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <% if logged_in? && current_user == @tweet.user %>
+          <input class="f6 link dim black db" type="submit" value="Delete">
+          <button class="f6 link dim black db" type="button"><a id="edit" href="/tweets/<%= @tweet.id %>/edit">Edit</a></button>
+          <% end %>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+  </body>
+</html>

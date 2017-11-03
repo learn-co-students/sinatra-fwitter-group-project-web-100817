@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit A Tweet</title>
+  </head>
+  <body>
+
+    <div class="mw9 center ph3-ns">
+      <div class="cf ph2-ns">
+        <div class="center w-100 pa2">
+          <h1>Edit My Tweet</h1>
+        </div>
+
+    <div class="fl w-100 w-25-ns pa2">
+      <div class="bg-white pv4"></div>
+    </div>
+
+    <div class="fl w-50 w-50-ns pa2">
+      <div class="bg-white pv2">
+        <form action="/tweets/<%= @tweet.id %>" method="post" class="pa4 pl5 black-80">
+          <input type="hidden" name="_method" value="patch">
+          <div class="measure">
+            <label for="username" class="f6 b db mb2 fl teal"><%= current_user.username %> says:<span class="normal black-60"></span></label>
+            <textarea class="input-reset ba b--black-20 pa2 mb2 db w-100" name="tweet[content]" rows="10" cols="50"><%= @tweet.content %></textarea>
+
+            <!-- <small id="name-desc" class="f6 black-60 db mb2">Helper text for the form control.</small> -->
+            <br>
+            <input class="f6 link dim black db" type="submit" value="Edit">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="fl w-50 w-25-ns pa2">
+      <div class="bg-white pv4"></div>
+    </div>
+  </div>
+</div>
+
+
+  </body>
+</html>
