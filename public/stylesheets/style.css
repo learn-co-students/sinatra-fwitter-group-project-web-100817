@@ -1,0 +1,26 @@
+body {
+  font-family: 'Avenir';
+}
+
+.main {
+  background-color: #42f4bf;
+  height: 550px;
+}
+
+.links {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.teal {
+  color: #42f4bf;
+}
+
+h1 {
+  text-align: center;
+}
+
+#edit {
+  text-decoration: none;
+}
