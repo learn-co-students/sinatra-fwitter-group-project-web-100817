@@ -1,0 +1,10 @@
+<h3><%=@tweet.content %></h3>
+<p><%=@user.username%></p>
+<% if @user.id == session[:user_id] %>
+  <form class="" action="/tweet/<%=@tweet.id%>/edit" method="get">
+    <input type="submit" name="" value="Edit Tweet">
+  </form>
+  <form class="" action="/tweet/<%=@tweet.id%>/edit" method="post">
+    <input type="submit" name="" value="Delete Tweet">
+  </form>
+<% end %>

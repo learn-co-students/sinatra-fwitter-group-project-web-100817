@@ -1,0 +1,13 @@
+<h1>Welcome to Fwitter</h1>
+
+<% if session[:user_id]%>
+  <% user = User.find(session[:user_id]) %>
+  <p>Welcome, <%=user.username%></p>
+  <a href="/tweets/new"><button type="button">Create Tweet</button></a>
+  <a href="/user/<%=user.id%>"><button type="button">My Tweets</button></a>
+    <a href="/logout"> <button type="button">Logout</button></a>
+  <h2>Tweets:</h2>
+  <% Tweet.all.each do |tweet| %>
+  <p><%= tweet.content %></p>
+  <% end %>
+<% end %>
