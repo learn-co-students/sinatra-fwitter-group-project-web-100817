@@ -24,17 +24,29 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/signup' do
-    erb :'static/login'
+    if logged_in?
+      redirect '/tweets'
+    else
+      erb :'static/signup'
+    end
   end
 
   post '/signup' do
-    user = User.create(params)
-    session[:user_id] = user.id
-    redirect '/tweets'
+    if params[:username].empty? || params[:email].empty? || params[:password].empty?
+      redirect '/signup'
+    else
+      user = User.create(params)
+      session[:user_id] = user.id
+      redirect '/tweets'
+    end
   end
 
   get '/login' do
-    erb :'static/login'
+    if logged_in?
+      redirect '/tweets'
+    else
+      erb :'static/login'
+    end
   end
 
   post '/login' do
@@ -48,7 +60,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/logout' do
-    session.destroy
-    redirect '/'
+    if logged_in?
+      session.destroy
+      redirect '/login'
+    else
+      redirect '/'
+    end
   end
+
 end

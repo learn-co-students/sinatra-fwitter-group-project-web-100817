@@ -6,14 +6,18 @@
   </head>
   <body>
 
+          <div class="mw9 center ph3-ns">
+            <div class="cf ph2-ns">
+              <div class="center w-100 pa2">
+                <h1 class="teal">Log In</h1>
+              </div>
 
-      <div class="mw9 center ph3-ns mt4">
-        <div class="teal-bg cf ph2-ns">
-          <div class="fl w-100 w-50-ns pa2">
+          <div class="fl w-100 w-25-ns pa2">
+            <div class="bg-white pv4"></div>
+          </div>
 
-            <div class="pv4">
-              <h1 class="teal">Log In</h1>
-
+          <div class="fl w-50 w-50-ns pa2">
+            <div class="bg-white pv2">
               <form class="pa4 black-80" action="/login" method="post">
                 <div class="measure">
                   <label for="username" class="f6 b db mb2">Username <span class="normal black-60"></span></label>
@@ -22,35 +26,18 @@
                   <label for="password" class="f6 b db mb2">Password <span class="normal black-60"></span></label>
                   <input id="password" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="password" name="password">
                   <br>
-                  <input class="f6 link dim black db" type="submit" value="Log In">
+                  <input class="f6 link dim black db" type="submit" value="Log In" id="submit">
                 </div>
               </form>
             </div>
           </div>
-          <div class="fl w-100 w-50-ns pa2">
-            <div class="outline pv4">
-              <h1 class="teal">Sign Up</h1>
 
-              <form class="pa4 black-80" action="/signup" method="post">
-                <div class="measure">
-                  <label for="username" class="f6 b db mb2">Username <span class="normal black-60"></span></label>
-                  <input id="name" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc" name="username">
-                  <!-- <small id="name-desc" class="f6 black-60 db mb2">Helper text for the form control.</small> -->
-                  <label for="email" class="f6 b db mb2">Email <span class="normal black-60"></span></label>
-                  <input id="email" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" name="email">
-
-                  <label for="password" class="f6 b db mb2">Password <span class="normal black-60"></span></label>
-                  <input id="password" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="password" name="password">
-
-                  <br>
-                  <input class="f6 link dim black db" type="submit" value="Sign Up">
-                </div>
-              </form>
-
-            </div>
+          <div class="fl w-50 w-25-ns pa2">
+            <div class="  bg-white pv4"></div>
           </div>
         </div>
       </div>
+
 
   </body>
 </html>

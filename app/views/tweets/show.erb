@@ -19,11 +19,14 @@
 
         <form action="/tweets/<%= @tweet.id %>" method="post">
           <input type="hidden" name="_method" value="delete">
-          <% if logged_in? && current_user == @tweet.user %>
-          <input class="f6 link dim black db" type="submit" value="Delete">
-          <button class="f6 link dim black db" type="button"><a id="edit" href="/tweets/<%= @tweet.id %>/edit">Edit</a></button>
+          <% if logged_in? %>
+          <input class="f6 link dim black db" type="submit" value="Delete Tweet" id="delete"></input>
           <% end %>
         </form>
+
+        <% if logged_in? && current_user == @tweet.user %>
+        <button class="f6 link dim black db" type="button"><a id="edit" href="/tweets/<%= @tweet.id %>/edit">Edit Tweet</a></button>
+        <% end %>
 
       </div>
     </div>
