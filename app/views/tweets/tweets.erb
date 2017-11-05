@@ -1,0 +1,7 @@
+<h1>Welcome, <%= current_user.username %></h1>
+<%# binding.pry %>
+<% if !current_user.tweets.empty?%>
+  <%Tweet.all.each do |tweet| %>
+  <a href="/tweets/<%= tweet.id %>"><%= tweet.content %></a><br>
+<% end %>
+<% end %>
