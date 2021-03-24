@@ -1,0 +1,11 @@
+<h2>Users</h2>
+<% @users.each do |user| %>
+  <p><%= user.username %></p>
+<% end %>
+
+<form  action="/signup" method="post">
+    <label>Username: <input type="text" name="username" value=""></label>
+    <label>Email: <input type="text" name="email" value=""></label>
+    <label>Password: <input type="text" name="password" value=""></label>
+    <input type="submit">
+</form>
